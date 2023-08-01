@@ -1,0 +1,176 @@
+<div class="chat-dashboard">
+  <div class="chat-dashboard__wrapper">
+    <div class="chat-dashboard__container">
+      <div class="chat-dashboard__row">
+        <div class="sidebar">
+          <div class="sidebar__wrapper">
+            <!-- Sidebar content here -->
+            <div class="sidebar__logo">
+              <img src="../../../assets/images/logo-white.svg" alt="" />
+            </div>
+            <div class="sidebar__file-logo">
+              <img src="../../../assets/images/excel.svg" alt="" />
+            </div>
+            <div class="sidebar__file-name">
+              <h4>File Name</h4>
+              <p>297 Kb</p>
+            </div>
+
+            <div class="sidebar__recent-q">
+              <h4>Recent Questions</h4>
+              <div class="sidebar__recent-q-body scroll-box">
+                <div class="sidebar__recent-item" *ngFor="let item of items">
+                  <div class="sidebar__recent-icon">
+                    <img src="{{ item.icon }}" alt="" />
+                  </div>
+                  <div class="sidebar__recent-para">{{ item.content }}</div>
+                </div>
+              </div>
+            </div>
+
+            <button class="sidebar__add-new">
+              <span
+                ><svg width="25px" height="25px" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M14.5 6V23.0239" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"
+                  />
+                  <path d="M23 14.5H6" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              Start a New Session
+            </button>
+
+          </div>
+        </div>
+        <div class="chat-content">
+          <div class="scroll-box scroll-box2">
+            <div class="chat-content__inner"  >
+
+              <div class="chat-content__media" *ngFor="let chat of chatArray" [ngClass]="{'chat-right': chat.question !== undefined, 'chat-left': chat.answer !== undefined}">
+                  <div class="chat-content__media-body" *ngIf="chat?.question">
+                    <div class="chat-content__main-msg-wrapper">
+                      {{chat?.question}}
+                    </div>
+                  </div>
+                  <div class="chat-content__main-img-user" *ngIf="chat?.question">BI</div>
+                  <div class="chat-content__main-img-response" *ngIf="chat?.answer">
+                    <img src="../../../assets/images/chat-response.svg" alt="" />
+                  </div>
+                  <div class="chat-content__response-area" *ngIf="chat?.answer">
+                    <div class="chat-content__response-area-heading">
+                      {{chat?.answer?.ansHead}}
+                    </div>
+                    <div class="chat-content__table scroll-box" *ngIf="chat?.answer?.ans?.length > 1">
+                      <table class="chat-pot-table" >
+                        <tr>
+                          <th>{{'Dimension'}}</th>
+                          <th>{{'Data'}}</th>
+                        </tr>
+                        <tr *ngFor="let data of chat?.answer?.ans">
+                          <td>{{data?.dimension}}</td>
+                          <td>{{data?.data}}</td>
+                        </tr>
+                      </table>
+                      </div>
+                      <div class="chat-content__response-area-heading" *ngIf="chat?.answer?.ans?.length === 1">{{chat?.answer?.ans?.[0]?.dimension}}<span>{{chat?.answer?.ans?.[0]?.data}}</span> </div>
+                  </div>
+              </div>
+
+              <!-- <div class="chat-content__media chat-right">
+                <div class="chat-content__media-body">
+                  <div class="chat-content__main-msg-wrapper">
+                    1.Get me count of distinct values
+                  </div>
+                </div>
+                <div class="chat-content__main-img-user">NC</div>
+              </div> -->
+
+              <!-- <div class="chat-content__media chat-left">
+                <div class="chat-content__main-img-response">
+                  <img src="../../../assets/images/chat-response.svg" alt="" />
+                </div>
+                <div class="chat-content__response-area">
+                  <div class="chat-content__response-area-heading">
+                    Lorem ipsum dolor sit amet consectetur. At nulla quam neque aliquet auctor viverra vestibulum amet est. Ultrices velit neque gravida urna nascetur ornare lacus sit eu.
+                  </div>
+                  <div class="chat-content__table scroll-box">
+                  <table class="chat-pot-table" >
+                    <tr>
+                      <th>Data</th>
+                      <th>Count</th>
+                    </tr>
+                    <tr>
+                      <td>Date</td>
+                      <td>365</td>
+                    </tr>
+                    <tr>
+                      <td>Rented Bike Count </td>
+                      <td>2166</td>
+                    </tr>
+                    <tr>
+                      <td>Rented Bike Count </td>
+                      <td>2166</td>
+                    </tr>
+                    <tr>
+                      <td>Rented Bike Count </td>
+                      <td>2166</td>
+                    </tr>
+                    <tr>
+                      <td>Rented Bike Count </td>
+                      <td>2166</td>
+                    </tr>
+                    <tr>
+                      <td>Rented Bike Count </td>
+                      <td>2166</td>
+                    </tr>
+                    <tr>
+                      <td>Rented Bike Count </td>
+                      <td>2166</td>
+                    </tr>
+                    <tr>
+                      <td>Rented Bike Count </td>
+                      <td>2166</td>
+                    </tr>
+                  </table>
+                  </div>
+                </div>
+              </div> -->
+
+             <!-- <div class="chat-content__media chat-right">
+                <div class="chat-content__media-body">
+                  <div class="chat-content__main-msg-wrapper">
+                    Get me count of distinct values  in column Hour
+                  </div>
+                </div>
+                <div class="chat-content__main-img-user">NC</div>
+              </div> -->
+
+              <!-- <div class="chat-content__media chat-left">
+                <div class="chat-content__main-img-response">
+                  <img src="../../../assets/images/chat-response.svg" alt="" />
+                </div>
+                <div class="chat-content__response-area">
+                  <div class="chat-content__response-area-heading">
+                    <div>Hour :<span> 90 </span> </div>
+                  </div>
+                </div>
+              </div> -->
+
+            </div>
+        </div>
+
+          <div class="chat-content__submit-area" [formGroup]="questionForm">
+            <input type="text" class="chat-content__submit" placeholder="Ask your queries" formControlName="question" [(ngModel)]="currentQuestion" >
+            <span class="chat-content__submit-icon" (click)="submitQuestion()">
+              <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.0334614 22.502C-0.160282 23.3923 0.523268 23.7692 1.15752 23.4849L22.5937 12.4932H22.5958C22.8515 12.349 23 12.0891 23 11.7893C23 11.4893 22.8515 11.2293 22.5958 11.0851H22.5937L1.15752 0.0932507C0.523268 -0.191159 -0.160282 0.18584 0.0334614 1.07618C0.0465719 1.13649 1.31386 6.7815 2.00288 9.85162L13.1929 11.7892L2.00288 13.7266C1.31386 16.7965 0.0465136 22.4417 0.0334614 22.502Z" fill="#0077E4"/>
+              </svg>
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

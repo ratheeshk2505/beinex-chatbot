@@ -1,0 +1,42 @@
+// //====== font variable ========//
+$secondary-font : 'Open Sans', sans-serif;
+$primary-font : 'Poppins', sans-serif;
+
+// Color system
+
+// Primary Colors
+$color-primary: #0B3A62;
+$color-primary-light: #003B6D;
+$color-primary-medium: #10385B;
+// Secondary Colors
+
+$color-secondary-light: #e1e1e1;
+$color-secondary: #f0f0f0;
+
+// Other Colors
+// @use "../../../../../assets/scss/abstracts/" as * ;
+
+$color-white: #fff;
+$color-black: #000;
+
+
+
+
+
+:root {
+  --color-primary: #{$color-primary};
+  --color-primary-medium: #{$color-primary-medium};
+  --color-primary-light: #{$color-primary-light};
+
+  --color-secondary-light: #{$color-secondary-light};
+  --color-secondary: #{$color-secondary};
+
+  --color-black: #{$color-black};
+  --color-white: #{$color-white};
+}
+
+
+.dark{
+  --color-black: #{$color-white};
+  --color-white: #{$color-black};
+}

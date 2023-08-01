@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+//ABSTRACTS
+@import "assets/scss/abstracts/";
+
+//LAYOUT
+@import "assets/scss/layout/index.scss";
+
+//BASE
+@import "assets/scss/base/base";
+@import "assets/scss/base/fonts";
+
+//MOLECULES
+
+
+@import "ngx-toastr/toastr";
+

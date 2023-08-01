@@ -1,0 +1,51 @@
+/* stylelint-disable property-no-vendor-prefix */
+// Spacing
+
+@use "sass:math";
+
+$spacer: 1rem !default; // Assumes the browser default, typically `16px`
+
+$rem-space-1: math.div($spacer * 6, 16) !default;
+$rem-space-2: math.div($spacer * 12, 16) !default;
+$rem-space-3: math.div($spacer * 18, 16) !default;
+$rem-space-4: math.div($spacer * 24, 16) !default;
+$rem-space-5: math.div($spacer * 30, 16) !default;
+$rem-space-desktop-1: math.div($spacer * 8, 16) !default;
+$rem-space-desktop-2: math.div($spacer * 16, 16) !default;
+$rem-space-desktop-3: math.div($spacer * 24, 16) !default;
+$rem-space-desktop-4: math.div($spacer * 32, 16) !default;
+$rem-space-desktop-5: math.div($spacer * 40, 16) !default;
+
+/* Fixed Spacing Variables */
+
+$spacer-0: 0;
+$spacer-1: 4px;
+$spacer-2: 8px;
+$spacer-3: 16px;
+$spacer-4: 24px;
+$spacer-5: 32px;
+$spacer-6: 40px;
+
+/* Em Based Spacing Variables */
+$em-spacer-1: 0.0625em;
+$em-spacer-2: 0.125em;
+$em-spacer-3: 0.25em;
+$em-spacer-4: 0.375em;
+$em-spacer-5: 0.5em;
+$em-spacer-6: 0.75em;
+$em-spacer-7: 0.875em;
+$em-spacer-8: 1em;
+$em-spacer-9: 1.25em;
+$em-spacer-10: 1.5em;
+
+// Grid spacer
+$grid-gutter-space: 20px;
+
+// Breakpoints.
+$bp-mobile: 600px;
+$bp-tablet: 1024px;
+$bp-desktop: 1280px;
+
+// Container width
+
+$container-max-width: 1404px;

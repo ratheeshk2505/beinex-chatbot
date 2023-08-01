@@ -1,0 +1,52 @@
+<div class="chat-port">
+  <div class="chat-port__logo">
+    <img src="../../../assets/images/logo.svg" alt="">
+  </div>
+  <div class="chat-port__heading">
+    <h5>Please upload your file here</h5>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+  </div>
+
+
+  <div>
+    <!-- Upload image -->
+    <div class="chat-profile-upload">
+
+      <div class="chat-profile-upload__select-field" [formGroup]="fileForm">
+
+        <input type="file" formControlName="filUpload" #fileInput (change)="uploadFile($event)"
+          accept=".csv, .xlsx" />
+        <div>
+          <svg width="66" height="55" viewBox="0 0 66 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M33.0123 27.0702V52.6295" stroke="#0077E4" stroke-width="2.83992" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path
+              d="M56.8392 45.2173C59.6091 43.7073 61.7972 41.3178 63.0583 38.426C64.3193 35.5342 64.5815 32.3049 63.8033 29.2476C63.0251 26.1903 61.251 23.4792 58.7609 21.5422C56.2708 19.6051 53.2066 18.5525 50.0518 18.5505H46.4735C45.6139 15.2256 44.0117 12.1389 41.7875 9.52231C39.5632 6.90577 36.7747 4.82751 33.6316 3.44378C30.4886 2.06004 27.0727 1.40685 23.6408 1.53329C20.209 1.65973 16.8504 2.56253 13.8177 4.1738C10.785 5.78508 8.15697 8.0629 6.13129 10.836C4.1056 13.6092 2.73493 16.8054 2.12233 20.1845C1.50973 23.5636 1.67114 27.0377 2.59442 30.3454C3.5177 33.6531 5.17883 36.7085 7.45293 39.2819"
+              stroke="#0077E4" stroke-width="2.83992" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M44.3719 38.4299L33.0122 27.0702L21.6525 38.4299" stroke="#0077E4" stroke-width="2.83992"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="chat-profile-upload__content">
+          <h4>Select a file or drag and drop here</h4>
+          <h5>.csv, .xlsx type files are supported to upload</h5>
+          <button class="chat-button chat-button--border" (click)="fileInput.click(); fileInput.value = ''">Select File</button>
+          <span class="chat-button__file-name">{{imageUrl}}</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="chat-port__file-upload"></div>
+  <div class="chat-port__ask-q">
+    <button class="chat-button" (click)="askQuestion()">Ask Questions<span><svg width="31" height="30" viewBox="0 0 31 30" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.8131 8L24.8166 14.9827L17.7302 22.0898" stroke="white" stroke-width="1.5" stroke-miterlimit="10"
+            stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M6.5 15.0449H24.8167" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </span> </button>
+  </div>
+</div>

@@ -1,0 +1,141 @@
+
+@use "../../../assets/scss/abstracts/variables/" as *;
+
+
+.chat-port {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 60px;
+  &__ask-q {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__heading{
+    h5{
+      color: #10385B;
+      font-size: 34px;
+      margin: 0;
+      font-weight: 500;
+
+    }
+    p{
+      letter-spacing: 0;
+      font-size: 14px !important;
+      color: #999999;
+      font-weight: 400;
+    }
+
+  }
+}
+
+.chat-button{
+  background-color: #0077E4;
+  padding: 6px 20px;
+  color: #fff;
+  border-radius: 6px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.chat-button--border{
+  background-color: transparent;
+  border: 1px solid #0077E4;
+  color: #0077E4;
+}
+
+.chat-button__file-name {
+  margin: 12px 6px;
+}
+
+// DRAG AND DROP DESIGN
+.chat-profile-upload {
+  &__select-field {
+    border: 2px dashed #EAEAEA;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    align-items: center;
+    background-color: #F8F8F8;
+    height: 263px;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    max-width: 600px;
+    min-width: 600px;
+    width: 100%;
+    input {
+      display: none;
+    }
+  }
+  &__error {
+    color: #e53535;
+    font-size: 12px;
+  }
+  &__content {
+    text-align: center;
+    font-family: $primary-font;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h4 {
+      color: #10385B;
+      font-size: 20px;
+      margin-bottom: 10px;
+      font-weight: 500;
+      letter-spacing: 0;
+      span {
+        color: #0a5d66;
+        font-weight: 600;
+      }
+    }
+    h5 {
+      letter-spacing: 0;
+      font-size: 14px !important;
+      color: #999999;
+      font-weight: 400;
+    }
+  }
+  &__reset {
+    font-family: $primary-font;
+    color: #3b71fc;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    width: fit-content;
+    transition: 0.5s;
+    &:hover {
+      color: #0a5d66;
+    }
+  }
+  &__upload-image {
+    padding: 0 20px;
+    img {
+      height: 212px;
+      object-fit: contain;
+    }
+  }
+  &__step{
+    font-size: 16px;
+    color: #788587;
+    font-weight: 400;
+    span{
+      color: #566264;
+      font-weight: 600;
+    }
+  }
+}
+// DRAG AND DROP DESIGN
